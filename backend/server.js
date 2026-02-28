@@ -1,5 +1,5 @@
 const express = require("express");
-const dotenv = require("dotenv");
+
 const cors = require("cors");
 const http = require("http");
 
@@ -8,7 +8,9 @@ const authRoutes = require("./routes/authRoutes.js");
 const aiRoutes = require("./routes/aiRoutes.js");
 const setupWebSocket = require("./socket");
 
-dotenv.config();
+if (process.env.NODE_ENV !== "production") {
+    require("dotenv").config();
+}
 
 const app = express();
 const PORT = process.env.PORT || 5000;
