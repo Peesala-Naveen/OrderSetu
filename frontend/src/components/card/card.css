@@ -1,0 +1,484 @@
+.food-card {
+    background-color: #1a1a1a;
+    border: 2px solid #ff5f1f;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    min-height: 380px;
+}
+
+.food-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(255, 95, 31, 0.3);
+    border-color: #ff7a3d;
+}
+
+/* Image Container */
+.card-image-container {
+    position: relative;
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+    background: #000;
+    flex-shrink: 0;
+}
+
+.card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+    background: #000;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.food-card:hover .card-image {
+    transform: scale(1.08);
+}
+
+/* Availability Badge */
+.availability-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    z-index: 1;
+}
+
+.availability-badge.available {
+    background-color: #28a745;
+    color: #fff;
+}
+
+.availability-badge.unavailable {
+    background-color: #dc3545;
+    color: #fff;
+}
+
+/* Card Content */
+.card-content {
+    padding: 16px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+/* Card Name */
+.card-name {
+    margin: 0;
+    font-size: 17px;
+    font-weight: 700;
+    color: #ff5f1f;
+    line-height: 1.3;
+    word-wrap: break-word;
+}
+
+/* Rating */
+.card-rating {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.stars {
+    display: flex;
+    gap: 2px;
+    align-items: center;
+}
+
+.star {
+    font-size: 16px;
+    line-height: 1;
+}
+
+.star.filled {
+    color: #ffc107;
+}
+
+.star.half {
+    color: #ffc107;
+    position: relative;
+}
+
+.star.empty {
+    color: #666;
+}
+
+.rating-value {
+    font-size: 12px;
+    color: #999;
+    font-weight: 500;
+}
+
+/* Description */
+.card-description {
+    font-size: 13px;
+    color: #bbb;
+    margin: 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    line-height: 1.4;
+    flex: 1;
+}
+
+/* Card Footer */
+.card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: auto;
+    padding-top: 12px;
+    border-top: 1px solid rgba(255, 95, 31, 0.2);
+    flex-wrap: nowrap;
+}
+
+.card-price {
+    display: flex;
+    align-items: baseline;
+    gap: 3px;
+    flex-shrink: 0;
+}
+
+.currency {
+    font-size: 14px;
+    color: #ff5f1f;
+    font-weight: 700;
+}
+
+.price-value {
+    font-size: 18px;
+    font-weight: 700;
+    color: #ff5f1f;
+}
+
+/* Add to Cart Button */
+.add-to-cart-btn {
+    background-color: #ff5f1f;
+    color: #1a1a1a;
+    border: none;
+    border-radius: 6px;
+    padding: 8px 16px;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.add-to-cart-btn:hover {
+    background-color: #ff7a3d;
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(255, 95, 31, 0.4);
+}
+
+.add-to-cart-btn:active {
+    transform: scale(0.95);
+}
+
+.add-to-cart-btn.disabled {
+    background-color: #666;
+    color: #999;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+.add-to-cart-btn.disabled:hover {
+    background-color: #666;
+    transform: none;
+    box-shadow: none;
+}
+
+/* Category Label */
+.card-category-label {
+    display: inline-block;
+    background: #ff5f1f;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 700;
+    border-radius: 4px;
+    padding: 2px 10px;
+    margin-bottom: 6px;
+    margin-right: 6px;
+    letter-spacing: 0.5px;
+    width: fit-content;
+    min-width: 0;
+    max-width: 100%;
+    white-space: nowrap;
+    box-sizing: border-box;
+}
+
+/* Responsive Design */
+/* Large Screens (1200px+) */
+@media (min-width: 1200px) {
+    .food-card {
+        min-height: 400px;
+    }
+
+    .card-image-container {
+        height: 240px;
+    }
+
+    .card-content {
+        padding: 18px;
+        gap: 10px;
+    }
+
+    .card-name {
+        font-size: 18px;
+    }
+
+    .card-rating {
+        gap: 10px;
+    }
+
+    .star {
+        font-size: 17px;
+    }
+
+    .card-description {
+        font-size: 14px;
+    }
+
+    .add-to-cart-btn {
+        padding: 10px 18px;
+        font-size: 14px;
+    }
+}
+
+/* Medium Screens (768px - 1199px) */
+@media (max-width: 1199px) and (min-width: 769px) {
+    .food-card {
+        min-height: 390px;
+    }
+
+    .card-image-container {
+        height: 220px;
+    }
+
+    .card-content {
+        padding: 16px;
+        gap: 8px;
+    }
+
+    .card-name {
+        font-size: 16px;
+    }
+
+    .card-rating {
+        gap: 8px;
+    }
+
+    .star {
+        font-size: 15px;
+    }
+
+    .rating-value {
+        font-size: 11px;
+    }
+
+    .card-description {
+        font-size: 12px;
+    }
+
+    .price-value {
+        font-size: 17px;
+    }
+
+    .add-to-cart-btn {
+        padding: 7px 14px;
+        font-size: 12px;
+    }
+}
+
+/* Tablets (481px - 768px) */
+@media (max-width: 768px) and (min-width: 481px) {
+    .food-card {
+        min-height: 370px;
+    }
+
+    .card-image-container {
+        height: 200px;
+    }
+
+    .card-content {
+        padding: 14px;
+        gap: 7px;
+    }
+
+    .card-name {
+        font-size: 15px;
+    }
+
+    .card-rating {
+        gap: 7px;
+    }
+
+    .star {
+        font-size: 14px;
+    }
+
+    .rating-value {
+        font-size: 10px;
+    }
+
+    .card-description {
+        font-size: 12px;
+        -webkit-line-clamp: 2;
+        line-clamp: 2;
+    }
+
+    .card-footer {
+        gap: 10px;
+        padding-top: 10px;
+    }
+
+    .currency {
+        font-size: 13px;
+    }
+
+    .price-value {
+        font-size: 16px;
+    }
+
+    .add-to-cart-btn {
+        padding: 7px 12px;
+        font-size: 12px;
+    }
+}
+
+/* Mobile Phones (320px - 480px) */
+@media (max-width: 480px) {
+    .food-card {
+        min-height: 360px;
+    }
+
+    .card-image-container {
+        height: 180px;
+    }
+
+    .card-content {
+        padding: 12px;
+        gap: 6px;
+    }
+
+    .card-name {
+        font-size: 14px;
+    }
+
+    .card-rating {
+        gap: 6px;
+    }
+
+    .star {
+        font-size: 12px;
+    }
+
+    .rating-value {
+        font-size: 9px;
+    }
+
+    .card-description {
+        font-size: 11px;
+        -webkit-line-clamp: 2;
+        line-clamp: 2;
+        line-height: 1.3;
+    }
+
+    .card-footer {
+        gap: 8px;
+        padding-top: 8px;
+    }
+
+    .card-price {
+        gap: 2px;
+    }
+
+    .currency {
+        font-size: 12px;
+    }
+
+    .price-value {
+        font-size: 14px;
+    }
+
+    .add-to-cart-btn {
+        padding: 6px 10px;
+        font-size: 11px;
+    }
+}
+
+/* Extra Small Phones (below 320px) */
+@media (max-width: 320px) {
+    .food-card {
+        min-height: 340px;
+        border-radius: 8px;
+    }
+
+    .card-image-container {
+        height: 160px;
+    }
+
+    .card-content {
+        padding: 10px;
+        gap: 5px;
+    }
+
+    .card-name {
+        font-size: 13px;
+    }
+
+    .card-rating {
+        gap: 4px;
+    }
+
+    .star {
+        font-size: 11px;
+    }
+
+    .rating-value {
+        font-size: 8px;
+    }
+
+    .card-description {
+        font-size: 10px;
+        -webkit-line-clamp: 1;
+        line-clamp: 1;
+    }
+
+    .card-footer {
+        gap: 6px;
+        padding-top: 6px;
+    }
+
+    .currency {
+        font-size: 11px;
+    }
+
+    .price-value {
+        font-size: 13px;
+    }
+
+    .add-to-cart-btn {
+        padding: 5px 8px;
+        font-size: 10px;
+    }
+}

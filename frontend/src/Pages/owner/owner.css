@@ -1,0 +1,201 @@
+.owner-payment-requests {
+    padding: 2rem;
+    max-width: 700px;
+    margin: 0 auto;
+    border: #ff5f1f 2px solid;
+
+    border-radius: 1rem;
+}
+
+.owner-no-requests {
+    color: #888;
+    margin-top: 1rem;
+}
+
+.owner-payment-request-card {
+    border: 1px solid #ff5f1f;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    background: #ff5f1f;
+    color: #fff;
+}
+
+.owner-payment-actions {
+    margin-top: 0.7rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.7rem;
+}
+
+.owner-btn {
+    border: none;
+    border-radius: 5px;
+    padding: 0.4rem 1rem;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.owner-view-bill {
+    background: black;
+    border: 2px solid #ff5f1f;
+}
+
+.owner-accept {
+    background: #28a745;
+}
+
+.owner-reject {
+    background: red;
+}
+
+.owner-close {
+    background: transparent;
+    border: 2px solid #ff5f1f;
+}
+
+.owner-bill-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+.owner-bill-modal {
+    background: black;
+    border-radius: 10px;
+    padding: 2rem;
+    padding: 2rem;
+    min-width: 320px;
+    max-width: 95vw;
+    color: white;
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+.owner-bill-modal h3 {
+    margin-top: 0;
+}
+
+.owner-bill-table {
+    width: 100%;
+    margin: 1rem 0;
+    border-collapse: collapse;
+}
+
+.owner-bill-table th,
+.owner-bill-table td {
+    padding: 0.5rem;
+    border-bottom: 1px solid #eee;
+    text-align: left;
+}
+
+.owner-bill-table th {
+    background: #ff5f1f;
+    color: #fff;
+}
+
+.owner-bill-charges {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.owner-bill-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.3rem;
+    font-size: 1rem;
+    color: white;
+}
+
+.owner-bill-total {
+    text-align: right;
+    font-weight: bold;
+    margin-top: 0.7rem;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    color: white;
+}
+
+.owner-bill-modal-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+}
+
+/* Responsive styles */
+@media (max-width: 900px) {
+    .owner-payment-requests {
+        padding: 1rem;
+        max-width: 98vw;
+        border: #ff5f1f 2px solid;
+    }
+
+    .owner-bill-modal {
+        padding: 1rem;
+        min-width: 220px;
+    }
+}
+
+@media (max-width: 600px) {
+    .owner-payment-requests {
+        padding: 0.5rem;
+        border: #ff5f1f 2px solid;
+    }
+
+    .owner-payment-request-card {
+        padding: 0.7rem;
+    }
+
+    .owner-bill-modal {
+        padding: 0.5rem;
+    }
+
+    .owner-btn {
+        font-size: 0.95rem;
+        padding: 0.3rem 0.7rem;
+    }
+
+    .owner-bill-table th,
+    .owner-bill-table td {
+        padding: 0.3rem;
+    }
+}
+
+.owner-payment-requests-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: white;
+}
+
+.owner-refresh-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.3rem;
+    color: #ff6600;
+    padding: 0;
+    margin-left: 0.5rem;
+    transition: color 0.2s;
+}
+
+.owner-refresh-btn:hover {
+    color: #ff944d;
+}
+
+.owner-refreshing-spinner {
+    font-size: 1.3rem;
+    color: #ff6600;
+    margin-left: 0.5rem;
+    vertical-align: middle;
+}

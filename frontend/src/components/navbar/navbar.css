@@ -1,0 +1,1070 @@
+/* Make brand area clickable */
+.brand_area--clickable {
+    cursor: pointer;
+}
+
+/* Center dashboard text for owner/chef/waiter */
+.dashboard--center {
+    flex: 1;
+    text-align: center;
+}
+
+/* Inline styles moved from navbar.jsx */
+.dashboard {
+    flex: 0 0 auto;
+    text-align: center;
+}
+
+.customer-selectors {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.icon.profile-icon {
+    cursor: pointer;
+}
+
+.icon.cart-icon {
+    cursor: pointer;
+    margin-left: 1rem;
+    font-size: 1.5em;
+    position: relative;
+}
+
+.cart-badge {
+    background: #ff5f1f;
+    color: #fff;
+    border: 2px solid #181818;
+    font-size: 0.55em;
+    font-weight: bold;
+}
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: #181818;
+    padding: 12px 20px;
+    overflow: visible;
+}
+
+.nav-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    flex-wrap: nowrap;
+    width: 100%;
+}
+
+/* Customer mode specific layout */
+.nav-content.customer-layout {
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+/* On large screens, arrange customer items in a single row */
+.nav-content.customer-layout .nav-top {
+    flex: 1 1 auto;
+    margin-top: 0;
+}
+
+.nav-content.customer-layout .nav-bottom {
+    margin-top: 0;
+    flex: 0 0 auto;
+    width: auto;
+}
+
+.brand_area {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+    min-width: fit-content;
+}
+
+.brand-name,
+.icon {
+    color: #ff5f1f;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.brand-name {
+    font-size: 16px;
+    flex-shrink: 0;
+}
+
+.icon {
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.brand-logo {
+    height: 36px;
+    width: auto;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+.dashboard {
+    flex: none;
+    margin-left: 8px;
+    font-size: 14px;
+    white-space: nowrap;
+    line-height: 1;
+    color: #ff5f1f;
+}
+
+.searchbar-container {
+    position: relative;
+    flex: 1 1 auto;
+    display: flex;
+    align-items: center;
+    min-width: 0;
+    max-width: 200px;
+}
+
+.searchbar {
+    width: 100%;
+    padding: 8px 40px 8px 10px;
+    background: #000;
+    border: 1px solid #ff5f1f;
+    color: #ff5f1f;
+    border-radius: 6px;
+    outline: none;
+    font-weight: 600;
+}
+
+.search-icon {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #ff5f1f;
+    cursor: pointer;
+    font-size: 16px;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.update-availability-btn {
+    background-color: transparent;
+    color: #ff5f1f;
+    border: solid 2px #ff5f1f;
+    cursor: pointer;
+    font-weight: 600;
+    padding: 6px 10px;
+    border-radius: 4px;
+    font-size: 13px;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.update-availability-btn:hover {
+    background-color: rgba(255, 95, 31, 0.1);
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    justify-content: flex-end;
+    flex-shrink: 0;
+    position: relative;
+}
+
+.edit-dropdown-container {
+    position: relative;
+}
+
+.edit-icon {
+    font-size: 18px;
+    color: #ff5f1f;
+    cursor: pointer;
+}
+
+.edit-icon-btn {
+    background: none;
+    border: none;
+    font-size: 18px;
+    color: #ff5f1f;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.edit-icon-btn:hover {
+    background-color: rgba(255, 95, 31, 0.1);
+    transform: scale(1.1);
+}
+
+.edit-icon-btn.active {
+    background-color: rgba(255, 95, 31, 0.2);
+    transform: scale(1.1);
+}
+
+.edit-dropdown-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #1a1a1a;
+    border: 2px solid #ff5f1f;
+    border-radius: 8px;
+    min-width: 180px;
+    margin-top: 10px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+    z-index: 1000;
+    animation: slideDown 0.3s ease;
+    overflow: visible;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.dropdown-option {
+    display: block;
+    width: 100%;
+    padding: 12px 16px;
+    background: none;
+    border: none;
+    color: #ff5f1f;
+    font-weight: 600;
+    cursor: pointer;
+    text-align: left;
+    font-size: 14px;
+    transition: all 0.2s ease;
+    border-bottom: 1px solid rgba(255, 95, 31, 0.2);
+}
+
+.dropdown-option:last-child {
+    border-bottom: none;
+}
+
+.dropdown-option:hover {
+    background-color: #ff5f1f;
+    color: #1a1a1a;
+    padding-left: 20px;
+}
+
+.dropdown {
+    background: #000;
+    border: 1px solid #ff5f1f;
+    color: #ff5f1f;
+    padding: 10px 12px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 14px;
+    min-width: 140px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dropdown:hover {
+    background-color: #1a1a1a;
+    box-shadow: 0 2px 8px rgba(255, 95, 31, 0.2);
+}
+
+.dropdown:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(255, 95, 31, 0.3);
+}
+
+.dropdown-table,
+.dropdown-category {
+    min-width: 160px;
+}
+
+.dropdown option {
+    background: #1a1a1a;
+    color: #ff5f1f;
+}
+
+.cart-icon {
+    font-size: 18px;
+    color: #ff5f1f;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0;
+    position: relative;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.cart-icon:hover {
+    transform: scale(1.1);
+}
+
+.cart-badge {
+    position: absolute;
+    top: -6px;
+    right: -8px;
+    background-color: #ff5f1f;
+    color: #1a1a1a;
+    font-size: 11px;
+    font-weight: 700;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #181818;
+}
+
+.cart-container {
+    position: relative;
+}
+
+.cart-dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #1a1a1a;
+    border: 2px solid #ff5f1f;
+    border-radius: 8px;
+    min-width: 300px;
+    margin-top: 10px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+    z-index: 1000;
+    animation: slideDown 0.3s ease;
+    overflow: visible;
+}
+
+.cart-dropdown h3 {
+    background-color: #0f0f0f;
+    color: #ff5f1f;
+    margin: 0;
+    padding: 12px 16px;
+    font-size: 16px;
+    border-bottom: 1px solid rgba(255, 95, 31, 0.2);
+}
+
+.cart-items {
+    max-height: 300px;
+    overflow-y: auto;
+    scrollbar-width: none;
+    /* Firefox */
+    -ms-overflow-style: none;
+    /* Internet Explorer 10+ */
+}
+
+.cart-items::-webkit-scrollbar {
+    display: none;
+    /* Chrome, Safari, Opera */
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 16px;
+    border-bottom: 1px solid rgba(255, 95, 31, 0.1);
+}
+
+.cart-item:last-child {
+    border-bottom: none;
+}
+
+.item-name {
+    color: #ccc;
+    font-size: 13px;
+    flex: 1;
+}
+
+.item-price {
+    color: #ff5f1f;
+    font-weight: 700;
+    font-size: 14px;
+    white-space: nowrap;
+    margin-left: 10px;
+}
+
+.cart-footer {
+    background-color: #0f0f0f;
+    padding: 12px 16px;
+    border-top: 1px solid rgba(255, 95, 31, 0.2);
+}
+
+.cart-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.cart-total span:first-child {
+    color: #999;
+    font-size: 14px;
+}
+
+.total-price {
+    color: #ff5f1f;
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.checkout-btn {
+    width: 100%;
+    background-color: #ff5f1f;
+    color: #1a1a1a;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 14px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.checkout-btn:hover {
+    background-color: #ff7a3d;
+    box-shadow: 0 4px 12px rgba(255, 95, 31, 0.3);
+}
+
+.checkout-btn:active {
+    transform: scale(0.95);
+}
+
+.timer-container {
+    width: 100%;
+}
+
+.order-timer {
+    width: 100%;
+    background-color: #2a2a2a;
+    border-radius: 6px;
+    padding: 12px 14px;
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+.timer-display {
+    color: #ff5f1f;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.timer-countdown {
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    font-family: 'Courier New', monospace;
+    letter-spacing: 2px;
+}
+
+.cancel-order-btn {
+    background-color: #dc3545;
+}
+
+.cancel-order-btn:hover {
+    background-color: #e4495a;
+    box-shadow: 0 4px 12px rgba(220, 53, 69, 0.3);
+}
+
+.generate-bill-btn {
+    background-color: #28a745;
+}
+
+.generate-bill-btn:hover {
+    background-color: #34d058;
+    box-shadow: 0 4px 12px rgba(40, 167, 69, 0.3);
+}
+
+.nav-top {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex: 1 1 auto;
+    min-width: 0;
+}
+
+.nav-bottom {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex: 0 0 auto;
+    justify-content: flex-end;
+}
+
+.timer-warning {
+    margin-right: 6px;
+    color: #ffc107;
+    font-size: 18px;
+    vertical-align: middle;
+}
+
+.cart-qty-controls {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-left: 10px;
+}
+
+qty-btn {
+    background: #ff5f1f;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    width: 22px;
+    height: 22px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+qty-btn:disabled {
+    background: #888;
+    cursor: not-allowed;
+}
+
+.item-qty {
+    min-width: 18px;
+    text-align: center;
+    font-weight: 700;
+    color: #ff5f1f;
+}
+
+.remove-cart-item-btn {
+    background: none;
+    border: none;
+    color: #dc3545;
+    font-size: 18px;
+    cursor: pointer;
+    margin-left: 8px;
+    padding: 0;
+    transition: color 0.2s;
+}
+
+.remove-cart-item-btn:hover {
+    color: #ff5f1f;
+}
+
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+.popup-message {
+    background: #000;
+    /* changed from #fff to black */
+    padding: 2rem 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    max-width: 90vw;
+    color: #fff;
+    /* ensure text is visible on black */
+}
+
+.popup-close-btn {
+    margin-top: 1rem;
+    padding: 0.5rem 1.5rem;
+    background: #ff5f1f;
+    /* changed from #007bff to #ff5f1f */
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.join-requests-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 16, 64, 0.35);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.join-requests-modal {
+    background: #111;
+    border-radius: 16px;
+    box-shadow: 0 4px 32px rgba(0, 16, 64, 0.18);
+    padding: 32px 24px;
+    min-width: 340px;
+    max-width: 90vw;
+    max-height: 80vh;
+    overflow-y: auto;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid #1a237e;
+    font-family: 'Segoe UI', 'Roboto', 'Arial', sans-serif;
+}
+
+.join-requests-header {
+    width: 100%;
+    background: linear-gradient(90deg, #1a237e 70%, #3949ab 100%);
+    color: #fff;
+    border-radius: 12px 12px 0 0;
+    padding: 12px 0;
+    text-align: center;
+    margin-bottom: 18px;
+    font-weight: bold;
+    font-size: 1.3rem;
+    letter-spacing: 1px;
+    font-family: 'Segoe UI', 'Roboto', 'Arial', sans-serif;
+}
+
+.close-btn {
+    position: absolute;
+    top: 16px;
+    right: 20px;
+    background: #222;
+    border: none;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    font-size: 18px;
+    cursor: pointer;
+    color: #fff;
+    box-shadow: 0 1px 4px rgba(26, 35, 126, 0.08);
+}
+
+.join-requests-loading {
+    color: #fff;
+    margin-top: 24px;
+}
+
+.join-requests-empty {
+    color: #90caf9;
+    margin-top: 24px;
+}
+
+.join-requests-list {
+    width: 100%;
+}
+
+.join-request-card {
+    border: 1.5px solid #3949ab;
+    border-radius: 10px;
+    padding: 16px;
+    margin-bottom: 16px;
+    background: #222;
+    box-shadow: 0 2px 8px rgba(26, 35, 126, 0.07);
+    color: #fff;
+    font-family: 'Segoe UI', 'Roboto', 'Arial', sans-serif;
+}
+
+.join-request-name {
+    font-weight: bold;
+    color: #90caf9;
+}
+
+.join-request-role {
+    color: #3949ab;
+}
+
+.join-request-salary-input {
+    width: 80px;
+    margin-left: 8px;
+    border-radius: 4px;
+    border: 1px solid #90caf9;
+    padding: 2px 6px;
+    background: #111;
+    color: #90caf9;
+    font-family: 'Segoe UI', 'Roboto', 'Arial', sans-serif;
+}
+
+.join-request-actions {
+    margin-top: 12px;
+    display: flex;
+    gap: 10px;
+}
+
+.accept-btn {
+    background: linear-gradient(90deg, #43a047 70%, #66bb6a 100%);
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 6px 16px;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 0 1px 4px rgba(67, 160, 71, 0.08);
+    font-family: 'Segoe UI', 'Roboto', 'Arial', sans-serif;
+}
+
+.reject-btn {
+    background: linear-gradient(90deg, #e53935 70%, #ef5350 100%);
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 6px 16px;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 0 1px 4px rgba(229, 57, 53, 0.08);
+    font-family: 'Segoe UI', 'Roboto', 'Arial', sans-serif;
+}
+
+/* Themed submenu */
+.ordersetu-themed-submenu {
+    position: absolute;
+    top: 48px;
+    right: 0;
+    background: black;
+    border: 2px solid #ff6600;
+    border-radius: 8px;
+    box-shadow: 0 2px 12px rgba(255, 102, 0, 0.08);
+    z-index: 100;
+    padding: 12px 16px 8px 16px;
+    min-width: 180px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.ordersetu-submenu-btn {
+    background: #ff6600;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 8px;
+    padding: 8px 12px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.ordersetu-submenu-btn:hover {
+    background: #e65c00;
+}
+
+.ordersetu-submenu-close {
+    background: none;
+    border: none;
+    color: #ff6600;
+    font-size: 1.3rem;
+    align-self: flex-end;
+    cursor: pointer;
+    margin-top: 2px;
+}
+
+/* OrderSetu theme for customer selectors */
+.customer-selectors {
+    grid-column: 1 / 4;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.customer-restaurant-selector,
+.customer-table-selector {
+    width: 180px;
+    min-width: 180px;
+    max-width: 180px;
+
+    border: 2px solid #ff5f1f;
+    background-color: #000;
+    color: #ff5f1f;
+
+    padding: 6px 10px;
+    font-weight: 600;
+}
+
+
+/* SAFE styling for native select options */
+.customer-restaurant-selector option,
+.customer-table-selector option {
+    background-color: #1a1a1a;
+    color: #ff5f1f;
+    font-weight: 600;
+}
+
+.customer-restaurant-selector:focus,
+.customer-table-selector:focus {
+    border: 2px solid #ff5f1f;
+    box-shadow: 0 0 0 2px #ff5f1f33;
+}
+
+
+
+@media (max-width: 1200px) {
+    .navbar {
+        padding: 10px 16px;
+    }
+
+    .nav-content {
+        gap: 12px;
+    }
+
+    .brand-logo {
+        height: 32px;
+    }
+
+    .brand-name {
+        font-size: 14px;
+    }
+
+    .dashboard {
+        font-size: 14px;
+        min-width: 80px;
+        max-width: 250px;
+    }
+
+    .icon {
+        font-size: 16px;
+    }
+
+    .edit-dropdown-menu {
+        min-width: 160px;
+    }
+}
+
+
+@media (max-width: 768px) {
+
+    .navbar {
+        padding: 10px 14px;
+    }
+
+    /* ===============================
+       CUSTOMER NAVBAR – MOBILE GRID
+       =============================== */
+
+    .nav-content.customer-layout {
+        display: grid;
+        grid-template-columns: auto 1fr auto;
+        grid-template-rows: auto auto;
+        gap: 8px;
+        align-items: center;
+        width: 100%;
+    }
+
+    /* ---------- ROW 1 ---------- */
+    /* Logo + Dashboard (left) */
+    .nav-content.customer-layout .brand_area {
+
+        grid-column: 1 / 3;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        min-width: 0;
+    }
+
+    .nav-content.customer-layout .dashboard {
+        font-size: 13px;
+        white-space: nowrap;
+    }
+
+    /* Cart / actions (right) */
+    .nav-content.customer-layout .nav-actions {
+        grid-column: 3 / 4;
+        justify-self: end;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 10px;
+    }
+
+    /* ---------- ROW 2 ---------- */
+    /* Restaurant + Table selectors */
+    .nav-content.customer-layout .customer-selectors {
+
+        grid-row: 2 / 3;
+        grid-column: 1 / 3;
+        display: flex;
+        gap: 10px;
+        width: 100%;
+    }
+
+    /* ---------- SELECTORS FIX ---------- */
+    .customer-restaurant-selector,
+    .customer-table-selector {
+        width: 160px;
+        max-width: 160px;
+        font-size: 13px;
+        padding: 8px 10px;
+
+        white-space: nowrap;
+        overflow: visible;
+        text-overflow: ellipsis;
+    }
+
+    /* ---------- BRAND ---------- */
+    .brand-logo {
+        height: 30px;
+    }
+
+
+
+    /* ---------- ICONS ---------- */
+    .icon,
+    .edit-icon-btn,
+    .profile-icon {
+        font-size: 16px;
+    }
+
+    .edit-icon-btn {
+        padding: 4px;
+    }
+
+    /* ---------- DROPDOWNS ---------- */
+    .dropdown,
+    .dropdown-table,
+    .dropdown-category {
+        min-width: 120px;
+        font-size: 13px;
+        padding: 8px 10px;
+    }
+
+    .edit-dropdown-menu {
+        min-width: 160px;
+        margin-top: 8px;
+    }
+
+    .dropdown-option {
+        padding: 10px 14px;
+        font-size: 13px;
+    }
+
+    .dropdown-option:hover {
+        padding-left: 16px;
+    }
+}
+
+
+@media (max-width: 480px) {
+
+    .navbar {
+        padding: 8px 10px;
+    }
+
+    /* ===============================
+       CUSTOMER NAVBAR – EXTRA SMALL
+       =============================== */
+
+    .nav-content.customer-layout {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        grid-template-rows: auto auto;
+        row-gap: 8px;
+        column-gap: 8px;
+        width: 100%;
+    }
+
+    /* ---------- ROW 1 ---------- */
+    /* Logo + Dashboard */
+    .nav-content.customer-layout .brand_area {
+        grid-row: 1 / 2;
+        grid-column: 1 / 2;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        min-width: 0;
+    }
+
+
+
+    .nav-content.customer-layout .dashboard {
+        font-size: 11px;
+        white-space: nowrap;
+    }
+
+    /* Cart icon */
+    .nav-content.customer-layout .nav-actions {
+        grid-row: 1 / 2;
+        grid-column: 2 / 3;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+    }
+
+    .cart-icon {
+        font-size: 16px;
+    }
+
+    /* ---------- ROW 2 ---------- */
+    /* Restaurant + Table selectors */
+    .nav-content.customer-layout .customer-selectors {
+        grid-row: 2 / 3;
+        grid-column: 1 / 3;
+        display: flex;
+        gap: 6px;
+        width: 100%;
+    }
+
+    /* ---------- SELECTORS FIX ---------- */
+    .customer-restaurant-selector,
+    .customer-table-selector {
+        width: 140px;
+        max-width: 140px;
+        font-size: 0.8rem;
+        padding: 6px 8px;
+
+        white-space: nowrap;
+        overflow: visible;
+        text-overflow: ellipsis;
+    }
+
+    /* ---------- ICONS ---------- */
+    .icon,
+    .edit-icon-btn,
+    .profile-icon {
+        font-size: 14px;
+    }
+
+    .edit-icon-btn {
+        padding: 3px;
+    }
+
+    /* ---------- DROPDOWNS ---------- */
+    .dropdown,
+    .dropdown-table,
+    .dropdown-category {
+        min-width: 90px;
+        font-size: 11px;
+        padding: 6px 8px;
+    }
+
+    .edit-dropdown-menu {
+        min-width: 140px;
+        margin-top: 6px;
+    }
+
+    .dropdown-option {
+        padding: 8px 12px;
+        font-size: 12px;
+    }
+
+    .dropdown-option:hover {
+        padding-left: 14px;
+    }
+}

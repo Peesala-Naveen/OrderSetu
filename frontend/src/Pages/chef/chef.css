@@ -1,0 +1,113 @@
+/* Full page wrapper (centers content) */
+.chef-page {
+    min-height: calc(100vh - 70px);
+    /* adjust if navbar height differs */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #000;
+    padding: 20px;
+}
+
+/* Main card */
+.chef-container {
+    width: 100%;
+    max-width: 650px;
+    background: #0b0b0b;
+    border-radius: 14px;
+    padding: 24px 26px;
+    color: #fff;
+    border: 2px solid #ff5f1f;
+    box-shadow: 0 0 25px rgba(255, 95, 31, 0.25);
+}
+
+/* Title */
+.chef-container h2 {
+    margin-bottom: 22px;
+    color: #ff5f1f;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+/* Item list */
+.chef-items {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+/* Each item row */
+.chef-item-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #111;
+    border: 1.8px solid #ff5f1f;
+    padding: 14px 18px;
+    border-radius: 10px;
+    font-size: 18px;
+}
+
+/* Item name */
+.chef-item-name {
+    font-weight: 500;
+}
+
+/* Quantity badge */
+.chef-item-qty {
+    background: #ff5f1f;
+    color: #fff;
+    padding: 6px 16px;
+    border-radius: 999px;
+    font-weight: bold;
+    min-width: 50px;
+    text-align: center;
+}
+
+/* Empty / loading text */
+.chef-empty {
+    text-align: center;
+    opacity: 0.75;
+    font-size: 16px;
+}
+
+.chef-ws-message {
+    background: #e6fffa;
+    color: #065f46;
+    padding: 10px 16px;
+    margin: 10px auto;
+    width: fit-content;
+    border-radius: 6px;
+    font-weight: 600;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* 🔔 Real-time chef notification */
+.chef-realtime-notification {
+    position: fixed;
+    top: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #111;
+    color: #ff5f1f;
+    padding: 14px 22px;
+    border-radius: 10px;
+    border: 2px solid #ff5f1f;
+    font-weight: 600;
+    z-index: 2000;
+    box-shadow: 0 6px 20px rgba(255, 95, 31, 0.35);
+    animation: slideDownFade 0.4s ease;
+}
+
+@keyframes slideDownFade {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(-50%, 0);
+    }
+}

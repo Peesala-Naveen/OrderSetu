@@ -1,0 +1,119 @@
+.add-menu-popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.add-menu-popup {
+    background: black;
+    border-radius: 8px;
+    border: 2px solid #ff6600;
+    /* OrderSetu theme border */
+    padding: 2rem 1.5rem 1.5rem 1.5rem;
+    min-width: 240px;
+    max-width: 400px;
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.18);
+    position: relative;
+}
+
+.add-menu-popup-header {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.add-menu-popup-close {
+    background: none;
+    border: none;
+    font-size: 1.3rem;
+    cursor: pointer;
+    color: #888;
+}
+
+.add-menu-popup-form input[type="text"],
+.add-menu-popup-form input[type="number"] {
+    width: 100%;
+    margin-bottom: 0.7rem;
+    padding: 0.5rem;
+    border-radius: 4px;
+    border: 1px solid #ff6600;
+    /* OrderSetu theme border */
+    background-color: black;
+    color: #fff;
+}
+
+.add-menu-popup-form input[type="file"] {
+    margin-bottom: 0.7rem;
+    background-color: black;
+    color: #fff;
+}
+
+.add-menu-popup-error {
+    color: #b00020;
+    margin-bottom: 0.5rem;
+}
+
+.add-menu-popup-success {
+    color: #008800;
+    margin-bottom: 0.5rem;
+}
+
+.add-menu-popup-submit {
+    width: 100%;
+    padding: 0.6rem;
+    background: #ff6600;
+    /* OrderSetu theme */
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.add-menu-popup-submit:disabled {
+    background: #90caf9;
+    cursor: not-allowed;
+}
+
+
+.ai-description-row {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.ai-description-row input {
+    flex: 1;
+}
+
+.ai-generate-btn {
+    background: #ff5f1f;
+    border: none;
+    color: #fff;
+    font-weight: 600;
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.15s;
+    white-space: nowrap;
+}
+
+.ai-generate-btn:hover:not(:disabled) {
+    background: #ff7a3d;
+    transform: scale(1.05);
+}
+
+.ai-generate-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}

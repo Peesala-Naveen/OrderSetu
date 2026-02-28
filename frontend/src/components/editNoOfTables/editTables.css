@@ -1,0 +1,87 @@
+.edit-tables-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.edit-tables-content {
+    background: #181818;
+    color: #fff;
+    padding: 2rem 2.5rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.2);
+    min-width: 320px;
+    text-align: center;
+    border: 2.5px solid #ff5f1f;
+}
+
+.edit-tables-content h2 {
+    color: #ff5f1f;
+    margin-bottom: 1.2rem;
+}
+
+.tables-quantity-changer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    margin: 1.5rem 0;
+    font-size: 1.5rem;
+}
+
+.tables-quantity-changer button {
+    font-size: 1.5rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    border: 1px solid #aaa;
+    background: black;
+    color: white;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.tables-quantity-changer button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.edit-tables-actions {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 1rem;
+
+}
+
+.edit-tables-actions button {
+    padding: 0.5rem 1.5rem;
+    border-radius: 5px;
+    border: none;
+    background: #ff5f1f;
+    color: #fff;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.edit-tables-actions button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.edit-tables-actions button:last-child {
+    background: black;
+}
+
+.edit-tables-error {
+    color: #c00;
+    margin-bottom: 0.5rem;
+}

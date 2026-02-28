@@ -1,0 +1,326 @@
+/* OrderSetu Popup Message Styles */
+.ordersetu-popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.55);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 3000;
+}
+
+.ordersetu-popup-box {
+    background: #181818;
+    border: 3px solid #ff5f1f;
+    border-radius: 18px;
+    box-shadow: 0 8px 32px rgba(255, 95, 31, 0.18), 0 2px 16px rgba(0, 0, 0, 0.25);
+    padding: 32px 28px 24px 28px;
+    min-width: 220px;
+    max-width: 90vw;
+    max-height: 60vh;
+    overflow-y: auto;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: popup-fade-in 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.ordersetu-popup-message {
+    color: #ff5f1f;
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 22px;
+    text-align: center;
+    word-break: break-word;
+    white-space: pre-line;
+}
+
+.ordersetu-popup-close-btn,
+.ordersetu-popup-confirm-btn {
+    background: #ff5f1f;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 36px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+    margin: 0 8px;
+    margin-top: 8px;
+}
+
+.ordersetu-popup-close-btn:hover,
+.ordersetu-popup-confirm-btn:hover {
+    background: #ff7a3d;
+    transform: scale(1.05);
+}
+
+.ordersetu-popup-actions {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    margin-top: 4px;
+}
+
+@media (max-width: 768px) {
+    .ordersetu-popup-box {
+        min-width: 120px;
+        padding: 20px 10px 16px 10px;
+    }
+
+    .ordersetu-popup-message {
+        font-size: 15px;
+    }
+
+    .ordersetu-popup-close-btn,
+    .ordersetu-popup-confirm-btn {
+        padding: 10px 24px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .ordersetu-popup-box {
+        min-width: 80px;
+        padding: 12px 4px 10px 4px;
+    }
+
+    .ordersetu-popup-message {
+        font-size: 13px;
+    }
+
+    .ordersetu-popup-close-btn,
+    .ordersetu-popup-confirm-btn {
+        padding: 8px 14px;
+        font-size: 12px;
+    }
+}
+
+/* OrderSetu theme: background black, accent #ff5f1f, text white */
+.edit-worker-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #000;
+    color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.4);
+    z-index: 1000;
+    min-width: 350px;
+    max-width: 90vw;
+    padding: 24px;
+}
+
+.edit-worker-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.2em;
+    margin-bottom: 16px;
+    color: #ff5f1f;
+    font-weight: bold;
+}
+
+.edit-worker-close {
+    background: none;
+    border: none;
+    font-size: 1.5em;
+    cursor: pointer;
+    color: #ff5f1f;
+}
+
+.edit-worker-body {
+    min-height: 80px;
+    max-height: 480px;
+    /* 10 rows * ~48px per row */
+    overflow-y: auto;
+}
+
+.edit-worker-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: transparent;
+    color: #fff;
+}
+
+.edit-worker-table th,
+.edit-worker-table td {
+    padding: 8px 12px;
+    border-bottom: 1px solid #222;
+    text-align: left;
+}
+
+.edit-worker-table th {
+    background: #111;
+    color: #ff5f1f;
+}
+
+.edit-worker-table thead th {
+    position: sticky;
+    top: 0;
+    background: #111;
+    z-index: 1;
+}
+
+.edit-worker-btn,
+.remove-worker-btn {
+    margin-right: 8px;
+    padding: 4px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.edit-worker-btn {
+    background: #ff5f1f;
+    color: #fff;
+}
+
+.edit-worker-btn:hover {
+    background: #e04e12;
+}
+
+.remove-worker-btn {
+    background: #222;
+    color: #ff5f1f;
+    border: 1px solid #ff5f1f;
+}
+
+.remove-worker-btn:hover {
+    background: #ff5f1f;
+    color: #fff;
+}
+
+.edit-worker-loading,
+.edit-worker-empty {
+    text-align: center;
+    color: #ff5f1f;
+    padding: 16px 0;
+}
+
+/* Edit salary popup/modal */
+.edit-worker-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.edit-worker-modal-content {
+    background: #000;
+    /* changed from #fff to #000 for theme */
+    border-radius: 10px;
+    padding: 2rem 2.5rem;
+    min-width: 320px;
+    max-width: 90vw;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
+    border: 2px solid #ff5f1f;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: popup-fade-in 0.2s;
+}
+
+@keyframes popup-fade-in {
+    from {
+        transform: scale(0.95);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.edit-worker-modal-content h3 {
+    color: #ff5f1f;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+.edit-worker-modal-content label {
+    color: #ff5f1f;
+    font-weight: 500;
+    margin-bottom: 0.3rem;
+    display: block;
+}
+
+.edit-worker-modal-content input[type="number"] {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1.5px solid #ff5f1f;
+    border-radius: 5px;
+    margin-top: 0.3rem;
+    font-size: 1rem;
+    outline: none;
+    transition: border 0.2s;
+    background: #000;
+    /* Set background to black */
+    color: #fff;
+    /* Set text color to white */
+}
+
+.edit-worker-modal-content input[type="number"]::placeholder {
+    color: #ccc;
+}
+
+.edit-worker-modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.edit-worker-save-btn,
+.edit-worker-cancel-btn {
+    padding: 0.5rem 1.2rem;
+    border: none;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.18s, color 0.18s;
+}
+
+.edit-worker-save-btn {
+    background: #ff5f1f;
+    color: #fff;
+}
+
+.edit-worker-save-btn:hover {
+    background: #e04e10;
+}
+
+.edit-worker-cancel-btn {
+    background: black;
+    color: #ff5f1f;
+    border: 1.5px solid #ff5f1f;
+}
+
+.edit-worker-cancel-btn:hover {
+    background: #ff5f1f;
+    color: #fff;
+}
+
+/* Optional: dim background when modal is open */
+body.modal-open {
+    overflow: hidden;
+}
