@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "./joinRequest.css";
+import "./JoinRequest.css";
 
 const JoinRequest = ({ onClose }) => {
     const [joinRequests, setJoinRequests] = useState([]);
