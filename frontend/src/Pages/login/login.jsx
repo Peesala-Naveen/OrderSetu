@@ -24,7 +24,7 @@ const Login = () => {
         setError("");
         try {
             const backendUrl = import.meta.env.VITE_BACKEND_URL || "http://localhost:5000";
-            const frontendUrl = import.meta.env.VITE_FRONTEND_URL || "http://localhost:5173";
+
             // Only send email and password
             const response = await fetch(`${backendUrl}/login`, {
                 method: "POST",
@@ -55,11 +55,11 @@ const Login = () => {
                 // Use userType from backend if present, else fallback to form.role
                 let userType = data.userType || data.type || form.role;
                 if (userType.toLowerCase() === "owner") {
-                    window.location.href = `${frontendUrl}/owner`;
+                    navigate("/owner");
                 } else if (userType.toLowerCase() === "server" || userType.toLowerCase() === "chef") {
-                    window.location.href = `${frontendUrl}/chef`;
+                    navigate("/chef");
                 } else if (userType.toLowerCase() === "waiter") {
-                    window.location.href = `${frontendUrl}/waiter`;
+                    navigate("/waiter");
                 } else {
                     navigate("/"); // Default fallback
                 }
