@@ -180,9 +180,9 @@ To avoid 404 errors on page refresh, this configuration is used:
 ## How to Run Locally
 
 ### Backend
-cd backend
-npm install
-npm start
+#cd backend
+#npm install
+#npm start
 
 ### Frontend
 cd frontend
