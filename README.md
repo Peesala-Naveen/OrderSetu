@@ -195,12 +195,13 @@ npm run dev
 ## Author
 
 Peesala Naveen  
-Computer Science Engineering (AI & DS)  
+Computer Science Engineering (AI & DS) 
 SASTRA University  
 GitHub:  
 https://github.com/Peesala-Naveen  
 LinkedIn:  
 https://www.linkedin.com/in/naveen-peesala-b41019301/  
+
 ---
 
 ## Status
