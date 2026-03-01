@@ -1,53 +1,69 @@
-##**OrderSetu**
-**## OrderSetu is a full-stack MERN web application for restaurant ordering and management.It helps restaurant owners, chefs, waiters, and customers manage orders efficiently using a single platform.The application also includes AI features for menu assistance.
+# OrderSetu
 
-##**Live Project Links:**
-1.Frontend (Vercel): https://order-setu.vercel.app
-2.Backend API (Render): https://ordersetu-backend.onrender.com
+OrderSetu is a full-stack MERN web application for restaurant ordering and management.  
+It helps restaurant owners, chefs, waiters, and customers manage orders efficiently using a single platform.  
+The application also includes AI features for menu assistance.
 
-##**Features**
+---
 
-##**1.Authentication & Roles**
-User login and registration
-  Role-based access:
-    Owner
-    Chef
-    Waiter
-    Customer
-    JWT-based authentication
-    
-##**2, Order Management**
-Place and manage orders
-Role-based dashboards
-Real-time order updates using WebSockets
+## Live Project Links
 
-##**3. AI Integration**
-AI-powered menu description generation
-Uses Groq API for AI features
+1. Frontend (Vercel):  
+   https://order-setu.vercel.app  
 
-##**4. Responsive UI**
-Fully responsive frontend
-Built with modern React and Vite
+2. Backend API (Render):  
+   https://ordersetu-backend.onrender.com  
 
-##**Tech Stack**
+---
 
-##**1. Frontend**
-React (Vite)
-React Router
-JavaScript
-CSS
-Deployed on Vercel
+## Features
 
-##**2.Backend**
-Node.js
-Express.js
-MongoDB Atlas
-JWT Authentication
-WebSockets
-Deployed on Render
+### 1. Authentication & Roles
+- User login and registration  
+- Role-based access:
+  - Owner  
+  - Chef  
+  - Waiter  
+  - Customer  
+- JWT-based authentication  
 
-##**Project Structure**
-##**Root**
+### 2. Order Management
+- Place and manage orders  
+- Role-based dashboards  
+- Real-time order updates using WebSockets  
+
+### 3. AI Integration
+- AI-powered menu description generation  
+- Uses Groq API for AI features  
+
+### 4. Responsive UI
+- Fully responsive frontend  
+- Built with modern React and Vite  
+
+---
+
+## Tech Stack
+
+### Frontend
+- React (Vite)  
+- React Router  
+- JavaScript  
+- CSS  
+- Deployed on Vercel  
+
+### Backend
+- Node.js  
+- Express.js  
+- MongoDB Atlas  
+- JWT Authentication  
+- WebSockets  
+- Deployed on Render  
+
+---
+
+## Project Structure
+
+### Root
 OrderSetu/
 ├── backend/
 ├── frontend/
@@ -55,63 +71,70 @@ OrderSetu/
 ├── package-lock.json
 └── README.md
 
-##**Backend Structure**
+
+---
+
+### Backend Structure
 backend/
 ├── config/
-│   └── connectDB.js
+│ └── connectDB.js
 ├── controllers/
 ├── middleware/
 ├── models/
-│   ├── billing_models.js
-│   ├── confirmed_orders_models.js
-│   ├── menu_models.js
-│   ├── request_models.js
-│   ├── restaurants_models.js
-│   └── workers_models.js
+│ ├── billing_models.js
+│ ├── confirmed_orders_models.js
+│ ├── menu_models.js
+│ ├── request_models.js
+│ ├── restaurants_models.js
+│ └── workers_models.js
 ├── routes/
 ├── socket.js
 ├── server.js
 ├── package.json
 └── .env
 
-##**Frontend Structure**
+
+---
+
+### Frontend Structure
 frontend/
 ├── public/
-│   ├── OrderSetu_brand_banner.png
-│   └── OrderSetu_logo.png
+│ ├── OrderSetu_brand_banner.png
+│ └── OrderSetu_logo.png
 ├── src/
-│   ├── assets/
-│   ├── components/
-│   │   ├── addAndEditMenu/
-│   │   ├── card/
-│   │   ├── editCharges/
-│   │   ├── editNoOfTables/
-│   │   ├── editProfile/
-│   │   ├── editWorkers/
-│   │   ├── footer/
-│   │   ├── joinRequest/
-│   │   └── navbar/
-│   ├── Pages/
-│   │   ├── chef/
-│   │   ├── customer/
-│   │   ├── home/
-│   │   ├── login/
-│   │   ├── owner/
-│   │   └── waiter/
-│   ├── App.jsx
-│   ├── main.jsx
-│   ├── index.css
-│   └── App.css
+│ ├── assets/
+│ ├── components/
+│ │ ├── addAndEditMenu/
+│ │ ├── card/
+│ │ ├── editCharges/
+│ │ ├── editNoOfTables/
+│ │ ├── editProfile/
+│ │ ├── editWorkers/
+│ │ ├── footer/
+│ │ ├── joinRequest/
+│ │ └── navbar/
+│ ├── Pages/
+│ │ ├── chef/
+│ │ ├── customer/
+│ │ ├── home/
+│ │ ├── login/
+│ │ ├── owner/
+│ │ └── waiter/
+│ ├── App.jsx
+│ ├── main.jsx
+│ ├── index.css
+│ └── App.css
 ├── vite.config.js
 ├── vercel.json
 ├── package.json
 └── .env
 
 
+---
 
-##**Environment Variables**
+## Environment Variables
 
-##**1.Backend (Render)**
+### Backend (Render)
 PORT=5000
 MONGO_URI=your_mongodb_atlas_uri
 JWT_SECRET=your_secret_key
@@ -119,48 +142,66 @@ JWT_EXPIRES_IN=7d
 FRONTEND_URL=https://order-setu.vercel.app
 GROQ_API_KEY=your_groq_api_key
 
-##**2. Frontend (Vercel)**
+
+### Frontend (Vercel)
 VITE_BACKEND_URL=https://ordersetu-backend.onrender.com
 VITE_LINKEDIN_URL=https://www.linkedin.com/in/naveen-peesala-b41019301/
 VITE_MAIL=naveenpeesala2004@gmail.com
 VITE_GITHUB_URL=https://github.com/Peesala-Naveen
 
-##**Important Deployment Notes**
-Backend is deployed on Render
-Frontend is deployed on Vercel
-MongoDB is hosted on MongoDB Atlas
-CORS is configured to allow only the deployed frontend
-SPA routing issue is fixed using vercel.json rewrite rule
 
-##**SPA Routing Fix (Vercel)**
+---
+
+## Important Deployment Notes
+- Backend is deployed on Render  
+- Frontend is deployed on Vercel  
+- MongoDB is hosted on MongoDB Atlas  
+- CORS is configured to allow only the deployed frontend  
+- SPA routing issue is fixed using Vercel rewrite rules  
+
+---
+
+## SPA Routing Fix (Vercel)
 To avoid 404 errors on page refresh, this configuration is used:
-frontend/vercel.json:
+
+`frontend/vercel.json`
 {
-  "rewrites": [
-    {
-      "source": "/(.*)",
-      "destination": "/index.html"
-    }
-  ]
+"rewrites": [
+{
+"source": "/(.*)",
+"destination": "/index.html"
+}
+]
 }
 
-##**How to Run Locally**
-##**1.Backend**
+
+---
+
+## How to Run Locally
+
+### Backend
 cd backend
 npm install
 npm start
 
-##**2.Frontend**
+### Frontend
 cd frontend
 npm install
 npm run dev
 
-##**Author**
-Peesala Naveen
-Computer Science Engineering (AI & DS)
-SASTRA University
-GitHub: https://github.com/Peesala-Naveen
-LinkedIn: https://www.linkedin.com/in/naveen-peesala-b41019301/
 
-##**Status**
+---
+
+## Author
+
+Peesala Naveen  
+Computer Science Engineering (AI & DS)  
+SASTRA University  
+GitHub:  
+https://github.com/Peesala-Naveen  
+LinkedIn:  
+https://www.linkedin.com/in/naveen-peesala-b41019301/  
+---
+
+## Status
 Project is fully deployed and working in production environment.
