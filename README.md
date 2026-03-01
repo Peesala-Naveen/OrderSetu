@@ -1,15 +1,15 @@
-**OrderSetu**
+##**OrderSetu**
 OrderSetu is a full-stack MERN web application for restaurant ordering and management.
 It helps restaurant owners, chefs, waiters, and customers manage orders efficiently using a single platform.
 The application also includes AI features for menu assistance.
 
-**Live Project Links:**
+##**Live Project Links:**
 1.Frontend (Vercel): https://order-setu.vercel.app
 2.Backend API (Render): https://ordersetu-backend.onrender.com
 
-**Features**
+##**Features**
 
-**1.Authentication & Roles**
+##**1.Authentication & Roles**
 User login and registration
   Role-based access:
     Owner
@@ -18,29 +18,29 @@ User login and registration
     Customer
     JWT-based authentication
     
-**2, Order Management**
+##**2, Order Management**
 Place and manage orders
 Role-based dashboards
 Real-time order updates using WebSockets
 
-**3. AI Integration**
+##**3. AI Integration**
 AI-powered menu description generation
 Uses Groq API for AI features
 
-**4. Responsive UI**
+##**4. Responsive UI**
 Fully responsive frontend
 Built with modern React and Vite
 
-**Tech Stack**
+##**Tech Stack**
 
-**1. Frontend**
+##**1. Frontend**
 React (Vite)
 React Router
 JavaScript
 CSS
 Deployed on Vercel
 
-**2.Backend**
+##**2.Backend**
 Node.js
 Express.js
 MongoDB Atlas
@@ -48,8 +48,8 @@ JWT Authentication
 WebSockets
 Deployed on Render
 
-**Project Structure**
-**Root**
+##**Project Structure**
+##**Root**
 OrderSetu/
 ├── backend/
 ├── frontend/
@@ -57,7 +57,7 @@ OrderSetu/
 ├── package-lock.json
 └── README.md
 
-**Backend Structure**
+##**Backend Structure**
 backend/
 ├── config/
 │   └── connectDB.js
@@ -76,7 +76,7 @@ backend/
 ├── package.json
 └── .env
 
-**Frontend Structure**
+##**Frontend Structure**
 frontend/
 ├── public/
 │   ├── OrderSetu_brand_banner.png
@@ -111,9 +111,9 @@ frontend/
 
 
 
-**Environment Variables**
+##**Environment Variables**
 
-**1.Backend (Render)**
+##**1.Backend (Render)**
 PORT=5000
 MONGO_URI=your_mongodb_atlas_uri
 JWT_SECRET=your_secret_key
@@ -121,20 +121,20 @@ JWT_EXPIRES_IN=7d
 FRONTEND_URL=https://order-setu.vercel.app
 GROQ_API_KEY=your_groq_api_key
 
-**2. Frontend (Vercel)**
+##**2. Frontend (Vercel)**
 VITE_BACKEND_URL=https://ordersetu-backend.onrender.com
 VITE_LINKEDIN_URL=https://www.linkedin.com/in/naveen-peesala-b41019301/
 VITE_MAIL=naveenpeesala2004@gmail.com
 VITE_GITHUB_URL=https://github.com/Peesala-Naveen
 
-**Important Deployment Notes**
+##**Important Deployment Notes**
 Backend is deployed on Render
 Frontend is deployed on Vercel
 MongoDB is hosted on MongoDB Atlas
 CORS is configured to allow only the deployed frontend
 SPA routing issue is fixed using vercel.json rewrite rule
 
-**SPA Routing Fix (Vercel)**
+##**SPA Routing Fix (Vercel)**
 To avoid 404 errors on page refresh, this configuration is used:
 frontend/vercel.json:
 {
@@ -146,23 +146,23 @@ frontend/vercel.json:
   ]
 }
 
-**How to Run Locally**
-**1.Backend**
+##**How to Run Locally**
+##**1.Backend**
 cd backend
 npm install
 npm start
 
-**2.Frontend**
+##**2.Frontend**
 cd frontend
 npm install
 npm run dev
 
-**Author**
+##**Author**
 Peesala Naveen
 Computer Science Engineering (AI & DS)
 SASTRA University
 GitHub: https://github.com/Peesala-Naveen
 LinkedIn: https://www.linkedin.com/in/naveen-peesala-b41019301/
 
-**Status**
+##**Status**
 Project is fully deployed and working in production environment.
