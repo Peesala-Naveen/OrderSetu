@@ -1,5 +1,5 @@
 ##**OrderSetu**
-**## OrderSetu is a full-stack MERN web application for restaurant ordering and management.It helps restaurant owners, chefs, waiters, and customers manage orders efficiently using a single platform.The application also includes AI features for menu assistance.**
+**## OrderSetu is a full-stack MERN web application for restaurant ordering and management.It helps restaurant owners, chefs, waiters, and customers manage orders efficiently using a single platform.The application also includes AI features for menu assistance.
 
 ##**Live Project Links:**
 1.Frontend (Vercel): https://order-setu.vercel.app
