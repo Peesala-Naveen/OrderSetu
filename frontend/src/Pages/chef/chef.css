@@ -89,8 +89,8 @@
     top: 80px;
     left: 50%;
     transform: translateX(-50%);
-    background: #111;
-    color: #ff5f1f;
+    background: #ff5f1f;
+    color: white;
     padding: 14px 22px;
     border-radius: 10px;
     border: 2px solid #ff5f1f;
@@ -117,7 +117,7 @@
     position: fixed;
     top: 90px;
     right: 20px;
-    background: #1f2937;
+    background: #ff5f1f;
     color: #fff;
     padding: 14px 20px;
     border-radius: 10px;
