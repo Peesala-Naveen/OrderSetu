@@ -108,7 +108,7 @@
 .waiter-requests-container {
     max-width: 600px;
     margin: 40px auto;
-    background: #ff5f1f;
+    background: black;
     border-radius: 12px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
     padding: 24px 32px;
