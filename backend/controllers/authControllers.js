@@ -1071,7 +1071,13 @@ const updateConfirmedItem = async (req, res) => {
         // 🔔 Notify customer with DETAILS
         const socketApi = req.app.get("socketApi");
         socketApi.notifyOrderUpdated(order._id.toString(), updates);
-
+        // 🔔 Notify Chef about item update
+        if (socketApi) {
+            socketApi.notifyChefItemUpdated(
+                order.restaurant_id.toString(),
+                updates
+            );
+        }
         res.json({ success: true, updates });
     } catch (err) {
         console.error(err);

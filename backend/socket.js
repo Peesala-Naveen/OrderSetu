@@ -31,7 +31,7 @@ function setupWebSocket(server) {
                     const { restaurantId } = data;
                     if (restaurantId) {
                         chefSocketMap.set(String(restaurantId), ws);
-                        console.log("👨‍🍳 Chef connected for restaurant:", restaurantId);
+
                     }
                 }
 
@@ -73,7 +73,7 @@ function setupWebSocket(server) {
     });
 
     return {
-        // ================= CUSTOMER =================
+        // ================= Owner sends to CUSTOMER =================
         notifyPaymentAccepted: (confirmedOrderId) => {
             const socket = orderSocketMap.get(String(confirmedOrderId));
             if (socket && socket.readyState === WebSocket.OPEN) {
@@ -83,6 +83,7 @@ function setupWebSocket(server) {
                 }));
             }
         },
+        // =================Waiter sends to CUSTOMER =================
         notifyOrderUpdated: (confirmedOrderId, updates) => {
             const socket = orderSocketMap.get(String(confirmedOrderId));
             if (socket && socket.readyState === WebSocket.OPEN) {
@@ -92,7 +93,7 @@ function setupWebSocket(server) {
                 }));
             }
         },
-
+        // =================Owner sends to CUSTOMER =================
         notifyPaymentRejected: (confirmedOrderId) => {
             const socket = orderSocketMap.get(String(confirmedOrderId));
             if (socket && socket.readyState === WebSocket.OPEN) {
@@ -103,7 +104,7 @@ function setupWebSocket(server) {
             }
         },
 
-        // ================= CHEF =================
+        // ================= Waiter sends to chef  =================
         notifyNewOrderAccepted: (restaurantId, items) => {
             const socket = chefSocketMap.get(String(restaurantId));
             if (socket && socket.readyState === WebSocket.OPEN) {
@@ -114,6 +115,7 @@ function setupWebSocket(server) {
             }
         },
 
+        // ================= Waiter sends to chef =================
         notifyItemDelivered: (restaurantId, itemName, quantity) => {
             const socket = chefSocketMap.get(String(restaurantId));
             if (socket && socket.readyState === WebSocket.OPEN) {
@@ -124,8 +126,18 @@ function setupWebSocket(server) {
                 }));
             }
         },
+        // ================= Waiter sends to chef =================
+        notifyChefItemUpdated: (restaurantId, updates) => {
+            const socket = chefSocketMap.get(String(restaurantId));
+            if (socket && socket.readyState === WebSocket.OPEN) {
+                socket.send(JSON.stringify({
+                    type: "CHEF_ITEM_UPDATED",
+                    updates
+                }));
+            }
+        },
 
-        // ================= WORKER =================
+        // ================= Owner sends to Worker =================
         notifySalaryUpdated: (workerId, newSalary) => {
             const socket = workerSocketMap.get(String(workerId));
             if (socket && socket.readyState === WebSocket.OPEN) {

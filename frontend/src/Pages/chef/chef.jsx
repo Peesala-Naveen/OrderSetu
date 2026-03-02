@@ -28,7 +28,7 @@ const Chef = () => {
     const socketRef = useRef(null);
     const [loading, setLoading] = useState(true);
     const fetchedOnce = useRef(false);
-    const [chefNotification, setChefNotification] = useState("");
+    const [chefPopupMsg, setChefPopupMsg] = useState("");
     const fetchSummary = async () => {
         setLoading(true);
         try {
@@ -70,13 +70,28 @@ const Chef = () => {
         const socket = new WebSocket(wsUrl);
         socketRef.current = socket;
         socket.onopen = () => {
+            const token = localStorage.getItem("token");
+
+            if (!token) {
+                console.error("No token found for chef");
+                return;
+            }
+
+            const tokenPayload = JSON.parse(
+                atob(token.split(".")[1])
+            );
+
+            // 🔴 IMPORTANT: this must exist
+            const restaurantId = tokenPayload.restaurant_id;
+
+            if (!restaurantId) {
+                console.error("restaurant_id missing in token payload", tokenPayload);
+                return;
+            }
+
             socket.send(JSON.stringify({
                 type: "JOIN_CHEF",
-                restaurantId: String(localStorage.getItem("restaurant_id"))
-            }));
-            socket.send(JSON.stringify({
-                type: "JOIN_WORKER",
-                workerId: localStorage.getItem("user_id")
+                restaurantId: restaurantId
             }));
         };
         socket.onmessage = (event) => {
@@ -88,43 +103,49 @@ const Chef = () => {
                     .map(i => `${i.item_name} x${i.quantity}`)
                     .join(", ");
 
-                setChefNotification(`🍳 New items added: ${itemsText}`);
-                setItems(prev => {
-                    const updated = [...prev];
+                // 🔔 POPUP MESSAGE
+                setChefPopupMsg(`🍳 Order Confirmed: ${itemsText}`);
 
-                    data.items.forEach(newItem => {
-                        const existing = updated.find(i => i.item === newItem.item_name);
+                // ⏱ Auto close after 15 seconds
+                setTimeout(() => {
+                    setChefPopupMsg("");
+                }, 15000);
 
-                        if (existing) {
-                            existing.quantity += newItem.quantity;
-                        } else {
-                            updated.push({
-                                item: newItem.item_name,
-                                quantity: newItem.quantity
-                            });
-                        }
-                    });
-
-                    return updated;
-                });
-
-                setTimeout(() => setChefNotification(""), 30000);
+                // 🔄 Refresh summary from backend
+                fetchSummary();
             }
+            // 🔄 ITEM UPDATED BY WAITER
+            if (data.type === "CHEF_ITEM_UPDATED") {
+                const updatesText = data.updates
+                    .map(u => {
+                        if (u.action === "removed") {
+                            return `❌ ${u.itemName} removed`;
+                        }
+                        return `✏️ ${u.itemName}: ${u.oldQty} → ${u.newQty}`;
+                    })
+                    .join(", ");
 
+                setChefPopupMsg(`📝 Order updated: ${updatesText}`);
+
+                setTimeout(() => {
+                    setChefPopupMsg("");
+                }, 15000);
+
+                // 🔄 Refresh summary automatically
+                fetchSummary();
+            }
             // ✅ ITEM DELIVERED
             if (data.type === "ITEM_DELIVERED") {
-                setChefNotification(`✅ Delivered: ${data.itemName} x${data.quantity}`);
-                setItems(prev =>
-                    prev
-                        .map(item =>
-                            item.item === data.itemName
-                                ? { ...item, quantity: item.quantity - data.quantity }
-                                : item
-                        )
-                        .filter(item => item.quantity > 0)
-                );
+                // 🔔 POPUP MESSAGE
+                setChefPopupMsg(`✅ Delivered: ${data.itemName} x${data.quantity}`);
 
-                setTimeout(() => setChefNotification(""), 30000);
+                // ⏱ Auto close after 15 seconds
+                setTimeout(() => {
+                    setChefPopupMsg("");
+                }, 5000);
+
+                // 🔄 Refresh summary from backend
+                fetchSummary();
             }
 
             // 💰 SALARY UPDATED
@@ -155,9 +176,9 @@ const Chef = () => {
                     onClose={() => setSalaryPopupMsg("")}
                 />
             )}
-            {chefNotification && (
-                <div className="chef-realtime-notification">
-                    {chefNotification}
+            {chefPopupMsg && (
+                <div className="chef-popup">
+                    {chefPopupMsg}
                 </div>
             )}
             {wsMessage && (

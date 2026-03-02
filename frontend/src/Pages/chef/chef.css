@@ -13,7 +13,7 @@
 .chef-container {
     width: 100%;
     max-width: 650px;
-    background: #0b0b0b;
+    background: black;
     border-radius: 14px;
     padding: 24px 26px;
     color: #fff;
@@ -109,5 +109,39 @@
     to {
         opacity: 1;
         transform: translate(-50%, 0);
+    }
+}
+
+
+.chef-popup {
+    position: fixed;
+    top: 90px;
+    right: 20px;
+    background: #1f2937;
+    color: #fff;
+    padding: 14px 20px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    font-size: 15px;
+    z-index: 9999;
+    animation: slideIn 0.4s ease, fadeOut 0.5s ease 14.5s forwards;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+        transform: translateX(100%);
     }
 }
