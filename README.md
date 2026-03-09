@@ -61,80 +61,80 @@ The application also includes AI features for menu assistance.
 
 ---
 
-## Project Structure
+## Project Structure  
+  
+### Root  
+OrderSetu/    
+├── backend/   
+├── frontend/   
+├── package.json   
+├── package-lock.json    
+└── README.md    
+   
 
-### Root
-OrderSetu/
-├── backend/
-├── frontend/
-├── package.json
-├── package-lock.json
-└── README.md
+---
+
+### Backend Structure   
+backend/   
+├── config/   
+│ └── connectDB.js    
+├── controllers/   
+├── middleware/    
+├── models/    
+│ ├── billing_models.js    
+│ ├── confirmed_orders_models.js    
+│ ├── menu_models.js    
+│ ├── request_models.js    
+│ ├── restaurants_models.js    
+│ └── workers_models.js    
+├── routes/     
+├── socket.js     
+├── server.js     
+├── package.json    
+└── .env    
 
 
 ---
 
-### Backend Structure
-backend/
-├── config/
-│ └── connectDB.js
-├── controllers/
-├── middleware/
-├── models/
-│ ├── billing_models.js
-│ ├── confirmed_orders_models.js
-│ ├── menu_models.js
-│ ├── request_models.js
-│ ├── restaurants_models.js
-│ └── workers_models.js
-├── routes/
-├── socket.js
-├── server.js
-├── package.json
-└── .env
+### Frontend Structure    
+frontend/     
+├── public/    
+│ ├── OrderSetu_brand_banner.png    
+│ └── OrderSetu_logo.png    
+├── src/     
+│ ├── assets/    
+│ ├── components/    
+│ │ ├── addAndEditMenu/    
+│ │ ├── card/    
+│ │ ├── editCharges/    
+│ │ ├── editNoOfTables/    
+│ │ ├── editProfile/    
+│ │ ├── editWorkers/    
+│ │ ├── footer/     
+│ │ ├── joinRequest/    
+│ │ └── navbar/     
+│ ├── Pages/     
+│ │ ├── chef/     
+│ │ ├── customer/     
+│ │ ├── home/    
+│ │ ├── login/    
+│ │ ├── owner/    
+│ │ └── waiter/    
+│ ├── App.jsx    
+│ ├── main.jsx    
+│ ├── index.css     
+│ └── App.css    
+├── vite.config.js    
+├── vercel.json     
+├── package.json    
+└── .env    
 
 
 ---
 
-### Frontend Structure
-frontend/
-├── public/
-│ ├── OrderSetu_brand_banner.png
-│ └── OrderSetu_logo.png
-├── src/
-│ ├── assets/
-│ ├── components/
-│ │ ├── addAndEditMenu/
-│ │ ├── card/
-│ │ ├── editCharges/
-│ │ ├── editNoOfTables/
-│ │ ├── editProfile/
-│ │ ├── editWorkers/
-│ │ ├── footer/
-│ │ ├── joinRequest/
-│ │ └── navbar/
-│ ├── Pages/
-│ │ ├── chef/
-│ │ ├── customer/
-│ │ ├── home/
-│ │ ├── login/
-│ │ ├── owner/
-│ │ └── waiter/
-│ ├── App.jsx
-│ ├── main.jsx
-│ ├── index.css
-│ └── App.css
-├── vite.config.js
-├── vercel.json
-├── package.json
-└── .env
+## Environment Variables   
 
-
----
-
-## Environment Variables
-
-### Backend (Render)
+### Backend (Render)   
 PORT=5000
 MONGO_URI=your_mongodb_atlas_uri
 JWT_SECRET=your_secret_key
