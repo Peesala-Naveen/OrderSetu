@@ -210,14 +210,20 @@ Project is fully deployed and working in production environment.
 
 ---
 
-##Login credentials for Testing:
+## Login credentials for Testing:
+
 Owner:
 Mail : raja@gmail.com
-Password : Raja@123
+Password : Raja@123  
 Chef:
 Mail : bunny@gmail.com
 Password : Bunny@123
 Waiter:
 MAil : akash@gmail.com
 Password : Akash@123
-**Customer to select the Restaurant for Testing : Raja Restaurant**
+**Customer to select the Restaurant for Testing : Raja Restaurant**  
+  
+
+
+
+
